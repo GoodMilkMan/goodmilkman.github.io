@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Host: psk65.ru
+Sitemap: https://psk65.ru/sitemap.xml
+Disallow:
