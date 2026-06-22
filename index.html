@@ -11,7 +11,6 @@
     <meta name="msapplication-TileColor" content="#2d89ef" />
     <meta name="theme-color" content="#f0f9fd" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
     <meta
       name="keywords"
       content="гидроизоляция, теплоизоляция, Сахалин, Южно-Сахалинск, Дальний Восток, ПСК, ремонт, кровля, фундамент, мочевина, полимочевина, ппу, полиуретан, пск сахалин, заказать, цена"
@@ -48,7 +47,7 @@
       ><div><img src="https://mc.yandex.ru/watch/85462018" style="position: absolute; left: -9999px" alt="" /></div
     ></noscript>
     <!-- /Yandex.Metrika counter -->
-    <noscript>Включите JavaScript а настройках браузера чтобы увидеть содержимое сайта.</noscript>
+    <noscript>Включите JavaScript в настройках браузера, чтобы увидеть содержимое сайта.</noscript>
     <div id="root">
       <div class="container">
         <div class="content">
@@ -73,7 +72,7 @@
             <div class="advantages">
               <div class="advantages_title">Наши преимущества</div>
               <div class="advantages_list">
-                <div class="advantage_item">Огромный опыт рыботы, включая выполненные проекты для нефтегазовых объектов и бюджетных организаций</div>
+                <div class="advantage_item">Огромный опыт работы, включая выполненные проекты для нефтегазовых объектов и бюджетных организаций</div>
                 <div class="advantage_item">Квалифицированный персонал</div>
                 <div class="advantage_item">Гарантия</div>
                 <div class="advantage_item">Соблюдение сроков</div>
@@ -92,8 +91,39 @@
             </div>
           </div>
         </div>
-        <div class="image"></div>
+        <div class="image" role="button" tabindex="0" aria-label="Открыть фотографию объекта на весь экран"></div>
       </div>
     </div>
+    <div class="imageModal" aria-hidden="true">
+      <img src="./images/bg1.png" alt="Гидроизоляционные работы на кровле" />
+    </div>
+    <script>
+      const imagePreview = document.querySelector('.image');
+      const imageModal = document.querySelector('.imageModal');
+
+      function openImageModal() {
+        imageModal.classList.add('isOpen');
+        imageModal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeImageModal() {
+        imageModal.classList.remove('isOpen');
+        imageModal.setAttribute('aria-hidden', 'true');
+      }
+
+      imagePreview.addEventListener('click', openImageModal);
+      imagePreview.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openImageModal();
+        }
+      });
+      imageModal.addEventListener('click', closeImageModal);
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeImageModal();
+        }
+      });
+    </script>
   </body>
 </html>
